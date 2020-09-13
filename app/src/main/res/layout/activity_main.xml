@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#F3F8F1"
+    android:orientation="vertical"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <TextView
+        android:layout_width="221dp"
+        android:layout_height="217dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/ic_account"
+        android:layout_gravity="center"/>
+
+    <EditText
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="login"
+        android:inputType="textEmailAddress"
+        android:drawableStart="@drawable/ic_person"
+        android:drawablePadding="5dp"
+        android:padding="5dp"
+        android:textSize="23sp"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textColor="#039700"
+        android:background="@drawable/edittext_goruntu"
+        />
+
+    <EditText
+        android:id="@+id/parol"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="şifrə"
+        android:ems="5"
+        android:inputType="textPassword"
+        android:drawableStart="@drawable/ic_lock"
+        android:drawablePadding="5dp"
+        android:padding="5dp"
+        android:textSize="23sp"
+        android:layout_margin="30dp"
+        android:textColor="#039700"
+        android:background="@drawable/edittext_goruntu"
+        />
+
+    <Button
+        android:id="@+id/daxil_ol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="daxil ol"
+        android:textAllCaps="false"
+        android:background="@drawable/girde_forma"
+        android:textColor="#ffff"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="28dp"
+        android:textSize="25sp"
+        />
+
+    <TextView
+        android:id="@+id/qeydiyyat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="qeydiyyatdan keç"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:padding="1dp"
+        android:layout_margin="25dp"
+        android:textStyle="bold"
+        android:textColor="#16D112"
+        />
+
+</LinearLayout>
