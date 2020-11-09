@@ -19,22 +19,11 @@ public class MainActivity extends AppCompatActivity {
     Button daxilol;
     EditText login, parol;
     TextView qeydiyyat;
-    ArrayList<String> user_parol=new ArrayList<String>();
 
-    String daxil_edilen_login="";
-    String daxil_edilen_parol="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        // Bunu müvəqqəti olaraq yazmışam nə zaman SQLite-a bağlasam bunu siləcəm....
-        Intent melumat_al=getIntent();
-        daxil_edilen_login=melumat_al.getStringExtra("daxil_edilen_login");
-        daxil_edilen_parol=melumat_al.getStringExtra("daxil_edilen_parol");
-        user_parol.add(daxil_edilen_login);
-        user_parol.add(daxil_edilen_parol);
-
 
         daxilol=findViewById(R.id.daxil_ol);
         login=findViewById(R.id.login);
@@ -46,8 +35,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String log=login.getText().toString();
                 String shifre=parol.getText().toString();
-                for(int x=0; x<user_parol.size()-1; x++){
-                    if(log.equals(user_parol.get(x)) && shifre.equals(user_parol.get(x+1))){
+                    if(log.equalsIgnoreCase("a") && shifre.equalsIgnoreCase("a")){
                         Intent userPage = new Intent(MainActivity.this, user_page.class);
                         startActivity(userPage);
                         overridePendingTransition(R.anim.bounce, R.anim.mixed_anim);
@@ -55,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
                         Toasty.error(MainActivity.this, "Çox təəssüf daxil etdiyiniz login və ya şifrə bizə məlum deyil!", Toast.LENGTH_LONG).show();
                     }
                 }
-            }
         });
 
         qeydiyyat.setOnClickListener(new View.OnClickListener() {

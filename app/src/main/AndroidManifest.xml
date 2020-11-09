@@ -10,8 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".user_page"></activity>
-        <activity android:name=".Qeydiyyat" />
-        <activity android:name=".sehife_iki" />
+        <activity android:name=".Qeydiyyat"
+            android:parentActivityName=".MainActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

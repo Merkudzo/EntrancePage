@@ -109,10 +109,20 @@ public class Qeydiyyat extends AppCompatActivity {
                         if(!Parol1.equals(Parol2))
                             Toasty.error(Qeydiyyat.this, "Zəhmət olmasa təkrar şifrəni düzgün daxil edin!", Toast.LENGTH_LONG).show();
                         else{
-                            Toasty.success(Qeydiyyat.this, "Məlumatlar yadda saxlandı!", Toast.LENGTH_LONG).show();
+                            QeydiyyatModul qeydiyyatModul = null;
+                            try {
+                                qeydiyyatModul=new QeydiyyatModul(-1, ad.getText().toString(), soyad.getText().toString(), email.getText().toString(), telefon.getText().toString(),
+                                        cins, tarix_goster.getText().toString(), login.getText().toString(), parol.getText().toString());
+                            }
+                            catch (Exception e){
+                                //
+                            }
+
+                            DataBaseHelper dataBaseHelper = new DataBaseHelper(Qeydiyyat.this);
+                            boolean yaddasa_yazildi = dataBaseHelper.elaveET(qeydiyyatModul);
+                            Toasty.success(Qeydiyyat.this, yaddasa_yazildi + "Məlumatlar yadda saxlandı!", Toast.LENGTH_LONG).show();
+
                             Intent MainPage=new Intent(Qeydiyyat.this, MainActivity.class);
-                            MainPage.putExtra("daxil_edilen_login", Login);
-                            MainPage.putExtra("daxil_edilen_parol", Parol1);
                             startActivity(MainPage);
                             overridePendingTransition(R.anim.righttoleft, R.anim.lefttoright);
                         }
